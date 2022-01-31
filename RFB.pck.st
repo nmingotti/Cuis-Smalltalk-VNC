@@ -1,6 +1,6 @@
-'From Cuis 6.0 [latest update: #5045] on 31 January 2022 at 4:24:12 pm'!
+'From Cuis 6.0 [latest update: #5045] on 31 January 2022 at 4:50:59 pm'!
 'Description '!
-!provides: 'RFB' 1 1!
+!provides: 'RFB' 1 2!
 SystemOrganization addCategory: 'RFB-Communication'!
 SystemOrganization addCategory: 'RFB-Messages'!
 SystemOrganization addCategory: 'RFB-Crypto-3DES'!
@@ -3390,20 +3390,21 @@ unhibernate
 
 	destForm isNil ifFalse: [destForm unhibernate]! !
 
-!RFBBitBlt class methodsFor: 'instance creation' stamp: 'ikp 3/23/2004 05:22'!
+!RFBBitBlt class methodsFor: 'instance creation' stamp: 'NM 1/31/2022 16:43:40'!
 bitFillerToForm: destForm
 	"Answer a BitBlt suitable for filling regions of destForm with pixel values (not Colors, regardless of the destForm depth)."
 
-	destForm unhibernate.
+       "[NM] removed ] "
+	" destForm unhibernate. " 
 	^self
 		destForm: destForm
 	 	sourceForm: nil
-		halftoneForm: (Form extent: 1@1 depth: destForm depth)
+		"halftoneForm: (Form extent: 1@1 depth: destForm depth) "
 		combinationRule: Form over
 		destOrigin: 0@0
 		sourceOrigin: 0@0
 		extent: 1@1
-		clipRect: destForm boundingBox! !
+		clipRect: destForm boundingBox ! !
 
 !RFBBitBlt class methodsFor: 'instance creation' stamp: 'ikp 3/7/2004 20:15'!
 bitPeekerFromForm: destForm
