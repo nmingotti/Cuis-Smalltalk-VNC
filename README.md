@@ -6,6 +6,11 @@ I provide VNC client and server capabilities to Cuis.
 
 ## What has been tested in Squeak and we want to work in Cuis is this 
 
+### Have it working in Squeak first and check how it looks like
+
+* I made a tiny tewak to have the package working in Squeak, I did not publish it anywhere but if you try to run the code snippets below you should be able to correct it yourself following the debugger. 
+* I will try to give more info about Squeak in the future 
+
 ### Client
 ```
 cli := RFBClient  new.
